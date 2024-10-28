@@ -1,0 +1,48 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Booking - Confirmation</title>
+    <style type="text/css">
+        body {
+            width: 800px;
+            margin: auto;
+        }
+        table {
+            width: 100%;
+        }
+        table, td, th {
+            border: 1px solid black;
+            padding: 3px 2px;
+        }
+    </style>
+</head>
+<body>
+<section>
+    <header>
+        <h1>Event Booking page - Booking confirmation </h1>
+    </header>
+    <table>
+        <tr>
+            <th colspan="2">Your Booking Status</th>
+        </tr>
+        <tr>
+            <td><b>Attendee Name</b></td>
+            <td>${attendeeName}</td>
+        </tr>
+        <tr>
+            <td><b>Client IP Address</b></td>
+            <td>${clientIp}</td>
+        </tr>
+        <tr>
+            <td><b>Booking for Event</b></td>
+            <td>${eventName}</td>
+        </tr>
+        <tr>
+            <td><b>Number of tickets</b></td>
+            <td>${numTickets}</td>
+        </tr>
+    </table>
+</section>
+</body>
+</html>

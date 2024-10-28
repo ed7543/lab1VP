@@ -1,0 +1,38 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<html xmlns:c="">
+<head>
+    <meta charset="utf-8">
+    <title>Event Booking page - Welcome and choose an Event</title>
+    <style type="text/css">
+        body { width: 800px; margin: auto; }
+    </style>
+</head>
+<body>
+<header>
+    <h1>Welcome to our Event Booking App</h1>
+</header>
+<main>
+    <!-- Search Form -->
+    <form method="GET" action="/">
+        <h2>Search Events:</h2>
+        <input type="text" name="searchText" placeholder="Search by name or description">
+        <input type="number" name="minRating" min="0" placeholder="Min rating">
+        <input type="submit" value="Search">
+    </form>
+
+    <!-- Event Selection Form -->
+    <form method="POST" action="/eventBooking">
+        <h2>Choose an event:</h2>
+        <c:forEach var="event" items="${events}">
+            <input type="radio" name="eventName" value="${event.name}" required/>
+            Name: ${event.name}, Description: ${event.description}, Rating: ${event.popularityScore}<br/>
+        </c:forEach>
+
+        <h2>Choose number of tickets:</h2>
+        <input type="number" name="numTickets" min="1" max="10" required><br/>
+        <br/>
+        <input type="submit" value="Submit">
+    </form>
+</main>
+</body>
+</html>
